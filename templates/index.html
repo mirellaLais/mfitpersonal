@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFIT-PERSONAL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"> 
+    <script src="{{url_for('static', filename='index.js' )}}"></script> 
+</head>
+<body>
+    <header class="cabecalho">
+        <nav>
+            <ul class="menu">
+                <li><a href="#" id="disciplina" class="button-like" onclick="showText('disciplina')">Disciplina</a></li>
+                <li><a href="#" id="grupo" class="button-like" onclick="showText('grupo')">Grupo</a></li>
+                <li><a href="#" id="projeto" class="button-like" onclick="showText('projeto')">Projeto</a></li>
+            </ul>
+        </nav>
+        <div class="menu-direito">
+            <p style="font-size: 30px; font-weight: bold;">
+                Registre-se agora<br>
+                <span>personal para ter</span>
+                <span>acesso completo ao</span>
+                <span>nosso serviço!</span>
+            </p>
+            <button onclick="window.open('{{ url_for('login') }}')">Entrar</button>
+
+            <button onclick="window.open('{{ url_for('registre') }}', '_blank')">Registrar-se</button>
+
+        </div>
+    </header>
+
+    <main class="home">
+        <div class="overlay" id="overlay" onclick="hideText()">
+            <div class="overlay-content">
+                <p id="overlay-text">Texto da caixa de texto...</p>
+                
+            </div>
+        </div>
+        <div class="fundo" id="content">
+            <img src="static/imagens/Frase-Motivacional.png" alt="frase motivacional"> 
+        </div>
+    </main>
+</body>
+</html>
